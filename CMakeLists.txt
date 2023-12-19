@@ -14,7 +14,7 @@ endif ()
 
 # Options
 option(BUILD_TESTS "Build tests" OFF)
-option(BUILD_TEASER_FPFH "Build TEASER++ wrappers for PCL FPFH estimation." OFF)
+option(BUILD_TEASER_FPFH "Build TEASER++ wrappers for PCL FPFH estimation." ON)
 option(BUILD_MATLAB_BINDINGS "Build MATLAB bindings" OFF)
 option(BUILD_PYTHON_BINDINGS "Build Python bindings" OFF)
 option(BUILD_DOC "Build documentation" OFF)
@@ -59,8 +59,6 @@ if (BUILD_TEASER_FPFH)
     find_package(PCL 1.8 QUIET REQUIRED COMPONENTS common io features kdtree)
 
     # check for -march=native in PCL compile definitions
-    get_target_property(PCL_COMPILE_OPTIONS pcl_common INTERFACE_COMPILE_OPTIONS)
-    string(FIND "${PCL_COMPILE_OPTIONS}" "-march=native" PCL_IS_NATIVE)
     if (NOT PCL_IS_NATIVE EQUAL -1)
         # Fix Eigen alignment conflicting with pcl issue
         # See: http://eigen.tuxfamily.org/dox-devel/group__TopicUnalignedArrayAssert.html
