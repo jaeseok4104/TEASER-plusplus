@@ -13,12 +13,12 @@ if (NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
 endif ()
 
 # Options
-option(BUILD_TESTS "Build tests" ON)
-option(BUILD_TEASER_FPFH "Build TEASER++ wrappers for PCL FPFH estimation." ON)
+option(BUILD_TESTS "Build tests" OFF)
+option(BUILD_TEASER_FPFH "Build TEASER++ wrappers for PCL FPFH estimation." OFF)
 option(BUILD_MATLAB_BINDINGS "Build MATLAB bindings" OFF)
 option(BUILD_PYTHON_BINDINGS "Build Python bindings" OFF)
 option(BUILD_DOC "Build documentation" OFF)
-option(BUILD_WITH_MARCH_NATIVE "Build with flag march=native" ON)
+option(BUILD_WITH_MARCH_NATIVE "Build with flag march=native" OFF)
 option(ENABLE_MKL "Try to use Eigen with MKL" OFF)
 option(ENABLE_DIAGNOSTIC_PRINT "Enable printing of diagnostic messages" ON)
 
