@@ -34,7 +34,7 @@ endif ()
 
 # Find dependencies
 # Eigen3
-find_package(Eigen3 3.2 QUIET REQUIRED NO_MODULE)
+find_package(Eigen3 3.3 QUIET REQUIRED NO_MODULE)
 if (ENABLE_MKL)
     find_package(MKL)
     if (MKL_FOUND)
@@ -59,16 +59,16 @@ if (BUILD_TEASER_FPFH)
     find_package(PCL 1.8 QUIET REQUIRED COMPONENTS common io features kdtree)
 
     # check for -march=native in PCL compile definitions
-    if (NOT PCL_IS_NATIVE EQUAL -1)
-        # Fix Eigen alignment conflicting with pcl issue
-        # See: http://eigen.tuxfamily.org/dox-devel/group__TopicUnalignedArrayAssert.html
-        add_definitions(-DEIGEN_MAX_STATIC_ALIGN_BYTES=0)
+#     if (NOT PCL_IS_NATIVE EQUAL -1)
+#         # Fix Eigen alignment conflicting with pcl issue
+#         # See: http://eigen.tuxfamily.org/dox-devel/group__TopicUnalignedArrayAssert.html
+#         add_definitions(-DEIGEN_MAX_STATIC_ALIGN_BYTES=0)
 
-        if (NOT BUILD_WITH_MARCH_NATIVE)
-            message (STATUS "PCL built with -march=native. Enable -march=native for TEASER++ as well")
-            set(BUILD_WITH_MARCH_NATIVE ON)
-        endif()
-    endif()
+#         if (NOT BUILD_WITH_MARCH_NATIVE)
+#             message (STATUS "PCL built with -march=native. Enable -march=native for TEASER++ as well")
+#             set(BUILD_WITH_MARCH_NATIVE ON)
+#         endif()
+#     endif()
 endif ()
 
 # googletest
