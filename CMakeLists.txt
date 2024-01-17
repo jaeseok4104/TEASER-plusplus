@@ -18,7 +18,7 @@ option(BUILD_TEASER_FPFH "Build TEASER++ wrappers for PCL FPFH estimation." ON)
 option(BUILD_MATLAB_BINDINGS "Build MATLAB bindings" OFF)
 option(BUILD_PYTHON_BINDINGS "Build Python bindings" OFF)
 option(BUILD_DOC "Build documentation" OFF)
-option(BUILD_WITH_MARCH_NATIVE "Build with flag march=native" OFF)
+option(BUILD_WITH_MARCH_NATIVE "Build with flag march=native" ON)
 option(ENABLE_MKL "Try to use Eigen with MKL" OFF)
 option(ENABLE_DIAGNOSTIC_PRINT "Enable printing of diagnostic messages" ON)
 
